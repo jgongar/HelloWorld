@@ -2,7 +2,7 @@
 
 Use **Render** to put your app on the web for free. Every push to GitHub will trigger a new deploy (CI/CD).
 
-**Important:** You must use **Blueprint** (not "Web Service") so that PR Previews and Auto-Deploy are available.
+**Important:** Use **Blueprint** (not "Web Service") so Auto-Deploy works. (Preview Environments require a paid Render workspace and are disabled on the free Hobby tier.)
 
 ---
 
@@ -45,7 +45,7 @@ Use **Render** to put your app on the web for free. Every push to GitHub will tr
 If you see *"PR Previews and Auto-Deploy are available only for repositories configured with Blueprints"*:
 
 1. Delete the current service (Dashboard → your service → **Settings** → **Delete Web Service**).
-2. Create a new one with **New +** → **Blueprint** and connect **jgongar/HelloWorld** again. Render will use `render.yaml` and enable PR Previews and Auto-Deploy.
+2. Create a new one with **New +** → **Blueprint** and connect **jgongar/HelloWorld** again. Render will use `render.yaml` and enable Auto-Deploy.
 
 ---
 

@@ -1,9 +1,7 @@
 # Render Blueprint - free hosting for this app
 # See https://render.com/docs/blueprint-spec
-# Use "New → Blueprint" in Render (not "Web Service") so PR Previews and Auto-Deploy work.
-
-previews:
-  generation: automatic   # Enables PR preview environments
+# Use "New → Blueprint" in Render (not "Web Service") for Auto-Deploy.
+# (Preview Environments require a paid workspace; omitted for Hobby/free tier.)
 
 services:
   - type: web
