@@ -1,0 +1,7 @@
+# Render Blueprint - free hosting for this app
+# See https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    runtime: docker
+    name: hello-world-app
+    # Render will use the Dockerfile in the repo root
