@@ -2,6 +2,8 @@
 
 Use **Render** to put your app on the web for free. Every push to GitHub will trigger a new deploy (CI/CD).
 
+**Important:** You must use **Blueprint** (not "Web Service") so that PR Previews and Auto-Deploy are available.
+
 ---
 
 ## Step 1: Create a Render account
@@ -11,29 +13,18 @@ Use **Render** to put your app on the web for free. Every push to GitHub will tr
 
 ---
 
-## Step 2: Create a new Web Service
+## Step 2: Create the app from a Blueprint (not Web Service)
 
-1. In the Render dashboard, click **New +** → **Web Service**.
+1. In the Render dashboard, click **New +** → **Blueprint**.
 2. Under **Connect a repository**, find **jgongar/HelloWorld** and click **Connect**.
    - If you don’t see it, click **Configure account** and grant Render access to your GitHub account, then try again.
+3. Render will detect the **render.yaml** in your repo and show the service it will create (e.g. `hello-world-app`).
+4. Choose **Branch:** `main` (and **Blueprint path:** `render.yaml` if it asks).
+5. Click **Apply** (or **Deploy Blueprint**).
 
 ---
 
-## Step 3: Configure the service
-
-Render will detect your **Dockerfile** automatically.
-
-- **Name:** e.g. `hello-world-app` (or leave the default).
-- **Region:** choose the one closest to you (e.g. **Oregon (US West)** or **Frankfurt (EU Central)**).
-- **Branch:** `main`.
-- **Runtime:** **Docker** (should be selected automatically).
-- Leave the rest as default.
-
-Click **Create Web Service**.
-
----
-
-## Step 4: Wait for the first deploy
+## Step 3: Wait for the first deploy
 
 - Render will build your Docker image and start the app (usually 2–5 minutes).
 - When the build finishes, you’ll see a green **Live** badge and a URL like:
@@ -42,10 +33,19 @@ Click **Create Web Service**.
 
 ---
 
-## Step 5: Automatic deploys (CI/CD)
+## Step 4: Automatic deploys (CI/CD)
 
 - Every time you **push** to the `main` branch on GitHub, Render will automatically build and deploy the new version.
 - No extra configuration needed.
+
+---
+
+## If you already created a "Web Service" by mistake
+
+If you see *"PR Previews and Auto-Deploy are available only for repositories configured with Blueprints"*:
+
+1. Delete the current service (Dashboard → your service → **Settings** → **Delete Web Service**).
+2. Create a new one with **New +** → **Blueprint** and connect **jgongar/HelloWorld** again. Render will use `render.yaml` and enable PR Previews and Auto-Deploy.
 
 ---
 

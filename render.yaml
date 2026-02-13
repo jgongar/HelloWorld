@@ -1,7 +1,13 @@
 # Render Blueprint - free hosting for this app
 # See https://render.com/docs/blueprint-spec
+# Use "New → Blueprint" in Render (not "Web Service") so PR Previews and Auto-Deploy work.
+
+previews:
+  generation: automatic   # Enables PR preview environments
+
 services:
   - type: web
     runtime: docker
     name: hello-world-app
+    plan: free            # Free tier
     # Render will use the Dockerfile in the repo root
