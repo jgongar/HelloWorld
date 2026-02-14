@@ -1,5 +1,7 @@
 # Hello World Web App
 
+**What this file is:** Project overview and step-by-step instructions (GitHub, Docker, hosting). Read this first if you’re new to the project.
+
 A simple Hello World web application that runs in Docker, with CI/CD using GitHub Actions.
 
 ---

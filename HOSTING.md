@@ -1,5 +1,7 @@
 # Free hosting setup
 
+**What this file is:** Step-by-step guide to put your app live on the web for free using Render (Blueprint).
+
 Use **Render** to put your app on the web for free. Every push to GitHub will trigger a new deploy (CI/CD).
 
 **Important:** Use **Blueprint** (not "Web Service") so Auto-Deploy works. (Preview Environments require a paid Render workspace and are disabled on the free Hobby tier.)

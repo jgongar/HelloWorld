@@ -1,11 +1,16 @@
-# Render Blueprint - free hosting for this app
-# See https://render.com/docs/blueprint-spec
+# =============================================================================
+# RENDER BLUEPRINT - Tells Render how to host your app (infrastructure as code)
+# =============================================================================
+# When you connect this repo to Render with "New → Blueprint", Render reads
+# this file and creates a "Web Service" that builds from your Dockerfile and
+# deploys it. Every push to main triggers a new deploy (auto-deploy).
+# =============================================================================
 # Use "New → Blueprint" in Render (not "Web Service") for Auto-Deploy.
 # (Preview Environments require a paid workspace; omitted for Hobby/free tier.)
 
 services:
-  - type: web
-    runtime: docker
-    name: hello-world-app
-    plan: free            # Free tier
-    # Render will use the Dockerfile in the repo root
+  - type: web                 # A web service (public URL, HTTP)
+    runtime: docker           # Build from the Dockerfile in the repo
+    name: hello-world-app     # Name of the service in the Render dashboard
+    plan: free                # Use the free tier (Hobby workspace)
+    # Render looks for Dockerfile in the repo root by default

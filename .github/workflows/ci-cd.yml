@@ -1,21 +1,35 @@
+# =============================================================================
+# CI/CD WORKFLOW - GitHub Actions: run checks on every push
+# =============================================================================
+# This file defines a "workflow". When you push to main (or open a PR),
+# GitHub runs a virtual machine, builds your Docker image, and tests it.
+# If anything fails, you see a red X on the commit. No need to run Docker
+# on your PC to know the app still builds.
+# =============================================================================
+
 name: CI/CD
 
+# When to run this workflow
 on:
   push:
-    branches: [main, master]
+    branches: [main, master]   # Run when someone pushes to main or master
   pull_request:
-    branches: [main, master]
+    branches: [main, master]   # Also run when someone opens a PR into main/master
 
+# Jobs = groups of steps. We have one job: build and test the app
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest     # Run on a fresh Ubuntu Linux machine (free for public repos)
     steps:
+      # Step 1: Get your code from GitHub into the machine
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Step 2: Build the Docker image (same as "docker build -t hello-world-app .")
       - name: Build Docker image
         run: docker build -t hello-world-app .
 
+      # Step 3: Run the container, check that the site responds, then stop it
       - name: Run container (quick test)
         run: |
           docker run -d -p 8080:80 --name test-app hello-world-app

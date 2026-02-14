@@ -1,3 +1,11 @@
+# =============================================================================
+# .DOCKERIGNORE - Files to EXCLUDE when building the Docker image
+# =============================================================================
+# When you run "docker build", Docker sends files from your project folder
+# to the build. We don't need .git, docs, or CI config inside the image,
+# so we list them here. Result: smaller image, faster builds.
+# =============================================================================
+
 .git
 .github
 README.md

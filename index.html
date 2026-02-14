@@ -1,14 +1,27 @@
 <!DOCTYPE html>
+<!--
+  INDEX.HTML - The main page of your web app
+  ===========================================
+  This is the only HTML file. The browser loads it and shows "Hello, World!".
+  It also loads style.css for colors and layout.
+-->
 <html lang="en">
 <head>
+  <!-- charset = how to decode the text (UTF-8 supports almost all languages) -->
   <meta charset="UTF-8">
+  <!-- viewport = makes the page scale nicely on phones and tablets -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Text that appears in the browser tab -->
   <title>Hello World</title>
+  <!-- Link to our stylesheet so the page looks nice (colors, spacing, etc.) -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- main = semantic tag meaning "main content of the page" -->
   <main>
+    <!-- h1 = biggest heading; usually only one per page -->
     <h1>Hello, World!</h1>
+    <!-- p = paragraph of text -->
     <p>My first web application — running in Docker.</p>
   </main>
 </body>

@@ -1,3 +1,10 @@
+# =============================================================================
+# .GITIGNORE - Files/folders Git should NOT track (don't push to GitHub)
+# =============================================================================
+# When you "git add .", Git adds all files. Files listed here are skipped.
+# Why: OS/editor junk and secrets shouldn't be in the repo.
+# =============================================================================
+
 # OS
 .DS_Store
 Thumbs.db
