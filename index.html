@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <!--
-  INDEX.HTML - The main page of your web app
-  ===========================================
-  This is the only HTML file. The browser loads it and shows "Hello, World!".
-  It also loads style.css for colors and layout.
+  INDEX.HTML - The game page
+  ==========================
+  Loads the stylesheet and the game script. The game itself is drawn
+  on the <canvas> element by game.js.
 -->
 <html lang="en">
 <head>
-  <!-- charset = how to decode the text (UTF-8 supports almost all languages) -->
   <meta charset="UTF-8">
-  <!-- viewport = makes the page scale nicely on phones and tablets -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Text that appears in the browser tab -->
-  <title>Hello World</title>
-  <!-- Link to our stylesheet so the page looks nice (colors, spacing, etc.) -->
+  <!-- viewport-fit=cover uses the full iPhone screen; user-scalable=no stops pinch-zoom while playing -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <!-- These make the page behave like a real app when added to the iPhone Home Screen -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Snake">
+  <meta name="theme-color" content="#16213e">
+  <title>Snake</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- main = semantic tag meaning "main content of the page" -->
   <main>
-    <!-- h1 = biggest heading; usually only one per page -->
-    <h1>Hello, World!</h1>
-    <!-- p = paragraph of text -->
-    <p>My first web application — running in Docker.</p>
+    <header>
+      <div>Score <strong id="score">0</strong></div>
+      <div>Best <strong id="best">0</strong></div>
+    </header>
+    <div id="board">
+      <canvas id="game"></canvas>
+      <!-- Overlay shown before the first game and after game over -->
+      <div id="overlay">
+        <h1 id="title">Snake</h1>
+        <p id="message">Swipe to steer. Tap to start.</p>
+      </div>
+    </div>
+    <p class="hint">Swipe anywhere to turn</p>
   </main>
+  <script src="game.js"></script>
 </body>
 </html>

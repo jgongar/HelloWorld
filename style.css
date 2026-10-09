@@ -1,42 +1,67 @@
 /*
-  STYLE.CSS - Styles for your web app (colors, layout, fonts)
-  ===========================================================
-  CSS = "Cascading Style Sheets". It doesn't change the text;
-  it only changes how things look (size, color, position).
+  STYLE.CSS - Looks of the game (colors, layout)
 */
+* { box-sizing: border-box; }
 
-/* * = "everything on the page". box-sizing: border-box means
-   width/height include padding and border (easier layout math). */
-* {
-  box-sizing: border-box;
-}
-
-/* body = the whole page. We center the content and set background + text color. */
 body {
-  margin: 0;                    /* No gap around the edges */
-  min-height: 100vh;            /* At least full screen height (vh = viewport height) */
-  display: flex;               /* Flexbox: easy way to center things */
-  align-items: center;         /* Center vertically */
-  justify-content: center;     /* Center horizontally */
-  font-family: system-ui, -apple-system, sans-serif;  /* Simple, readable font */
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);  /* Dark blue gradient */
-  color: #eee;                 /* Light gray text */
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;                 /* dvh = real visible height on iPhone Safari */
+  font-family: system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #eee;
+  /* Stop the page scrolling, bouncing, or selecting text while swiping */
+  overflow: hidden;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  /* Keep content clear of the notch / home indicator */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+           env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
-/* main = the white box / content area in the middle */
 main {
-  text-align: center;          /* Center the text inside */
-  padding: 2rem;               /* Space inside the box (2rem ≈ 32px) */
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
 }
 
-/* h1 = the "Hello, World!" heading */
-h1 {
-  font-size: 2.5rem;           /* Big text (2.5 × root font size) */
-  margin-bottom: 0.5rem;       /* Small space below the heading */
+header {
+  display: flex;
+  justify-content: space-between;
+  width: var(--board-size, 320px);
+  font-size: 1.1rem;
+  color: #a0a0a0;
 }
+header strong { color: #4ade80; font-size: 1.4rem; }
 
-/* p = the paragraph under the heading */
-p {
-  color: #a0a0a0;              /* Slightly dimmer gray than the heading */
-  font-size: 1.1rem;           /* Slightly larger than normal text */
+#board {
+  position: relative;
+  width: var(--board-size, 320px);
+  height: var(--board-size, 320px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
+canvas { display: block; width: 100%; height: 100%; }
+
+#overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(10, 10, 25, 0.75);
+}
+#overlay.hidden { display: none; }
+#overlay h1 { margin: 0 0 0.5rem; font-size: 2.5rem; }
+#overlay p { margin: 0; color: #cbd5e1; font-size: 1.1rem; }
+
+.hint { margin: 0; color: #64748b; font-size: 0.9rem; }

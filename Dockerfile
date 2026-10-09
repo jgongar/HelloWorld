@@ -14,8 +14,8 @@ FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # COPY = copy files from your computer INTO the image
-# We put index.html and style.css where nginx looks for web files
-COPY index.html style.css /usr/share/nginx/html/
+# We put index.html, style.css and game.js where nginx looks for web files
+COPY index.html style.css game.js /usr/share/nginx/html/
 
 # EXPOSE = document that this container listens on port 80 (HTTP)
 # (Doesn't open the port by itself; "docker run -p 8080:80" maps it.)
