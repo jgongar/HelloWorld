@@ -1,12 +1,6 @@
 ---
 name: wacc-capm
-description: >
-  WACC derivation for equity analysis (v16.5). CAPM from live inputs with ONE
-  coherent convention (spot Bund + Damodaran's current implied ERP), a
-  cash-adjusted operating beta for net-cash companies, a beta-quality check for
-  thin or implausibly low betas, country risk by revenue footprint, and a
-  defensible WACC RANGE that the DCF uses for the rating-robustness test. Read
-  this skill in Step 4 of every analysis. `show wacc capm` prints the full table.
+description: WACC derivation for equity analysis (v16.5). Read in Step 4 of every analysis. Spot Bund plus Damodaran current implied ERP, cash-adjusted operating beta for net-cash companies, beta-quality check for thin or low betas, country risk by revenue, and a defensible WACC range used for the rating-robustness test. The command show wacc capm prints the full table.
 ---
 
 # WACC — coherent CAPM, operating beta & defensible range (v16.5)

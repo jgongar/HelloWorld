@@ -1,13 +1,6 @@
 ---
 name: equity-dcf
-description: >
-  DCF computation engine for equity analysis. Use this skill whenever running
-  a DCF valuation, sensitivity analysis, scenario analysis, parameter override,
-  or any command that requires financial computation (set, reset, run sensitivity,
-  run scenario, what if). Also trigger when restoring a session from SESSION STATE.
-  Read this SKILL.md BEFORE writing any Python script. Contains script templates,
-  intra-session state rules, and the canonical accounting rules. Engine code lives
-  in scripts/dcf_engine.py. (No session restore — every run is a cold start.)
+description: DCF computation engine for equity analysis (v16.5). Use whenever running a DCF valuation, what-must-be-true, gap waterfall, scenarios, rating robustness, sensitivity, parameter override or any command that needs financial computation (set, reset, run sensitivity, run scenario, what if). Read this SKILL.md before writing any Python script. Holds the script template, the accounting rules and the engine in scripts/dcf_engine.py. Every run is a cold start.
 ---
 
 # Equity DCF — Computation Skill (v16.5)

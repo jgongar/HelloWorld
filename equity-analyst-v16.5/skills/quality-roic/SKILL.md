@@ -1,14 +1,6 @@
 ---
 name: quality-roic
-description: >
-  Quality scoring, ROIC computation, and Competitive Advantage Period (CAP)
-    framework for equity analysis (v16.5). Loaded at start of Step 5 of every
-  non-financials analysis. Owns the quality score (1-10), the ROIC and
-  incremental ROIC trajectory, the CAP duration assumption that drives the
-  margin fade, the post-Y10 growth fade stage AND the terminal RONIC, and the
-  competitive-position block that
-  justifies the moat score. Also triggered by `show quality`, `show roic`,
-  `set cap {years}`, `set ronic {x}`.
+description: Quality scoring, ROIC and Competitive Advantage Period (CAP) framework for equity analysis (v16.5). Loaded at the start of Step 5 of every non-financials analysis. Owns the 1-10 quality score, ROIC and incremental ROIC, the CAP that drives the margin fade, the post-Y10 growth fade stage and the terminal RONIC, and the competitive-position block. Also triggered by show quality, show roic, set cap, set ronic.
 ---
 
 # Quality, ROIC & Competitive Advantage Period — v16.5

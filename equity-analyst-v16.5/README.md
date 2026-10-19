@@ -6,12 +6,12 @@ v16.5 fixes the problems found when four v16.4 analyses (Hermès, Equasens, Hexa
 
 | File | Where it goes |
 |---|---|
-| `zips/equity-dcf.zip` | claude.ai → Settings → Capabilities → Skills: replace the existing **equity-dcf** skill |
-| `zips/wacc-capm.zip` | same place: replace **wacc-capm** |
-| `zips/quality-roic.zip` | same place: replace **quality-roic** |
+| `zips/equity-dcf.zip` or `.skill` | claude.ai → Settings → Capabilities → Skills: replace the existing **equity-dcf** skill |
+| `zips/wacc-capm.zip` or `.skill` | same place: replace **wacc-capm** |
+| `zips/quality-roic.zip` or `.skill` | same place: replace **quality-roic** |
 | `SYSTEM_PROMPT_v16.5.md` | paste over the v16.4 text in your project's instructions |
 
-Each zip holds one folder named after the skill, with `SKILL.md` inside; that is the layout claude.ai expects. Skills not listed here (base-rates, capital-allocation, fcf-reconciliation, modelling-options, sector-kpis, export-md, export-xlsx, equity-financials) are unchanged and still compatible: the engine only added output keys.
+Each skill comes as `.zip` and as `.skill` (identical content). Each archive holds one folder named after the skill, with `SKILL.md` inside and one-line YAML frontmatter (`name`, `description`), packaged like Anthropic's skill-creator packager and checked with its `quick_validate.py`. On iPhone/iPad, use the `.skill` files: the Files app may unzip a `.zip` on download, and then claude.ai rejects the upload. Skills not listed here (base-rates, capital-allocation, fcf-reconciliation, modelling-options, sector-kpis, export-md, export-xlsx, equity-financials) are unchanged and still compatible: the engine only added output keys.
 
 **Check before uploading:** these files are built on the v16.4 skills synced to your account on 19 Oct 2026, whose engine still reports `v16.4`. The Equasens session drafted an `equity-dcf` v16.4.1, with a sensitivity-grid function and an analysis-pack helper for the new Excel template. If you uploaded that afterwards, this zip replaces it, and those two functions would need to be merged back in.
 
