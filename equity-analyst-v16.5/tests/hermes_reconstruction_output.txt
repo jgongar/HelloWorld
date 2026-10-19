@@ -1,0 +1,36 @@
+v16.4 rules: €1095.9 (-18.1%) · TV 61.3% · exit 10.09x · breakeven WACC 7.94% · mkt Y3–Y10 CAGR 10.98%
+  (published run: €1,094, TV 61.3%, exit 10.1x, breakeven 7.94%, mkt CAGR 11.0%)
+
+--- WACC (v16.5: coherent conventions only) ---
+  Convention                          β   β op     Rf    ERP   CRP  Size      Ke    WACC
+  spot Rf + implied ERP            1.04   1.13  3.42%  4.20% 0.00% 0.00%   8.15%   8.15%
+  normalised Rf + long-run ERP     1.04   1.13  2.50%  5.50% 0.00% 0.00%   8.69%   8.69%
+  Central 8.15% · range 8.15–8.69% [normalised Rf + long-run ERP / spot Rf + implied ERP] 
+
+v16.5 rules: €1353.0 (+1.2%) · fade stage 10y · value beyond Y10 68.1% · exit 13.02x
+  Driver                              Ours  Mkt-implied  Consensus
+  ----------------------------------------------------------------
+  Rev CAGR Y1–Y10                     6.64         6.26          —
+  Rev CAGR Y3–Y10 (Y1–2 held)         7.06         6.55          —
+  Terminal margin Y10                44.50        43.98          —
+  WACC                                8.15         8.21          —  (inside the defensible WACC range — the gap is a discount-rate call)
+  Terminal growth                     3.00         2.86          —
+  RONIC                              25.00        22.38          —
+  Market-implied Y3–Y10 CAGR at WACC 8.15%: 6.55% · at 8.69%: 7.89%  [range: normalised Rf + long-run ERP / spot Rf + implied ERP]
+--- GAP WATERFALL: DCF → market (EUR) ---
+  DCF (model)                                         1353.0      +0.0
+  Y1–Y2 growth → consensus                            1379.8     +26.8
+  Y1–Y2 margin → consensus                            1379.8      +0.0
+  WACC 8.15% → 8.32% (inside range)                   1337.5     -42.3
+  Long-term path Y3–Y10 + TV (residual)               1337.5      +0.0
+  Total gap: -15.5 (-1.1%) → mostly discount-rate
+  ⚠ The whole remaining gap closes at WACC 8.32% — inside the defensible range 8.15–8.69%: no fundamental edge on growth/margins.
+  LT CAGR Y3–Y10: ours 7.06% vs market-implied 6.29% (at consensus near-term, our margins/WACC/tg/RONIC)
+✓ HOLD holds across WACC 8.15–8.69%
+--- SCENARIOS (market EUR 1337.5) ---
+  Scenario                Prob      Price   Upside  Root cause
+  Bear                     25%     1126.0   -15.8%  Chinese demand reset
+  Base                     50%     1353.0    +1.2%  
+  Bull                     25%     1639.5   +22.6%  historical compounding
+  Probability-weighted: EUR 1367.9 (+2.3%)
+  Brackets the price: yes
